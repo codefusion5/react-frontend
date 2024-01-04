@@ -1,11 +1,18 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Welcome from "./component/Welcome";
+import Login from "./component/Login";
 
-import './App.css';
-import Counter from './component/Counter';
-
+import Navbar from "./component/Navbar";
 function App() {
   return (
     <div className="App">
-    <Counter />
+    <BrowserRouter>
+    <Navbar/>
+      <Routes>
+          <Route path="/welcome"  element={<Welcome />} />
+          <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }
